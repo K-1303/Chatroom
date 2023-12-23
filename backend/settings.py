@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-7o!!ey3)m+q7m03j!+_bb&+w9i4ecc8)tz0&m%(q+w$9bdt11g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://chatroom-9osn.onrender.com',]
 
 
 # Application definition
