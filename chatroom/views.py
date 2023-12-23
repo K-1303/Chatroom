@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django import forms
+
+class UsernameForm(forms.Form):
+    username = forms.CharField(label='Enter Your Username', max_length=100)
 
 
 def home(request):
@@ -13,6 +17,13 @@ def home(request):
 
 
 def chat_room(request, room_name):
-    return render(request, 'chatroom.html', {
-        'room_name': room_name
-    })
+    if request.method == 'POST':
+        form = UsernameForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            
+            return render(request, 'chatroom.html', {'room_name': room_name, 'username': username})
+    else:
+        form = UsernameForm()
+
+    return render(request, 'username.html', {'form': form, 'room_name': room_name})
