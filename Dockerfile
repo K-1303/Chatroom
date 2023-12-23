@@ -21,5 +21,5 @@ RUN python manage.py migrate
 EXPOSE 8000
 
 # Set the command to run when the container starts
-CMD ["daphne", "-u", "0.0.0.0", "-p", "8000", "backend.asgi:application"]
+CMD ["daphne", "backend.asgi:application"]
 
