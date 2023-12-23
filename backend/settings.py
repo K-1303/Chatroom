@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://chatroom-9osn.onrender.com',]
+CSRF_TRUSTED_ORIGINS = ['https://chatroom-task.onrender.com',]
 
 
 # Application definition
