@@ -22,4 +22,3 @@ EXPOSE 8000
 
 # Set the command to run when the container starts
 CMD ["daphne", "backend.asgi:application"]
-
