@@ -42,9 +42,9 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
 
     def calculate_figures_of_speech(self, message):
         words = word_tokenize(message)
-        print(words)
+        #print(words)
         tagged_words = pos_tag(words)
-        print(tagged_words)
+        #print(tagged_words)
         figures_of_speech = {}
 
         for word, tag in tagged_words:

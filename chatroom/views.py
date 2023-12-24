@@ -4,7 +4,12 @@ from django.urls import reverse
 from django import forms
 
 class UsernameForm(forms.Form):
-    username = forms.CharField(label='Enter Your Username', max_length=100)
+    username = forms.CharField(
+        label='Enter Your Username',
+        max_length=100,
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+
 
 
 def home(request):
